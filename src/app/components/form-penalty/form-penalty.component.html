@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" ></ion-back-button> 
+    </ion-buttons>
+    <ion-title>Agregar Multa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <form [formGroup]="form"> 
+        <ion-item>
+          <ion-label position="floating">Causa de la Multa</ion-label>
+          <ion-input formControlName="cause" name="cause" ></ion-input>
+          <span class="text-danger"*ngIf="cause.invalid && (cause.dirty || cause.touched) ">*</span> 
+        </ion-item>
+        <ion-item>
+          <ion-label>Fecha de entrada</ion-label>
+          <ion-datetime displayFormat="YYYY-MM-DD" formControlName="entry_date" name="entry_date"
+          min="2019" placeholder="Select Date"></ion-datetime>
+          <span class="text-danger"*ngIf="entry_date.invalid && (entry_date.dirty || entry_date.touched) ">*</span> 
+        </ion-item>
+        <ion-item>
+            <ion-label >Persona Resposable</ion-label>
+            <ion-select formControlName="person_id" name="person_id" ok-text="Listo" cancel-text="Cancelar">
+              <ion-select-option *ngFor="let item of list_persons" value="{{item.id}}">{{item.document}}</ion-select-option>
+            </ion-select>
+            <span class="text-danger"*ngIf="person_id.invalid && (person_id.dirty || person_id.touched) ">*</span> 
+        </ion-item>
+        <ion-item>
+          <ion-label>Estado Multa</ion-label>
+          <P>ACTIVO-INACTIVO</P>
+          <ion-checkbox slot="end" formControlName="state" name="state"></ion-checkbox>
+        </ion-item>
+        <br>
+        <ion-button (click)="savePenalty()" expand="full">Agregar</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

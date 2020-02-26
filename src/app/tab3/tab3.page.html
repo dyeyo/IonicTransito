@@ -1,17 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+     Multas Terminadas
     </ion-title>
   </ion-toolbar>
+  
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<ion-content>
+  
+  <ion-list #lista>
+    <ion-item-sliding  *ngFor="let pen of penatly">
+        <ion-item>
+              <ion-label> 
+                <h3>{{pen.cause | uppercase}} </h3> 
+                <p>{{pen.entry_date | date: 'dd/MM/yyyy'}}</p>
+              </ion-label>
+              <ion-label > 
+                <h3>Nombre Resp: </h3> 
+                <p>{{pen.name | uppercase}} {{pen.last_name | uppercase}} # {{pen.document}}</p>
+              </ion-label>
+        </ion-item> 
+        <ion-item-options side="end">
+          <ion-item-option color="warning" routerLink="/editar_multa/{{pen.id}}">
+            <ion-icon color="light" name="pencil-outline" slot="icon-only"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+        <ion-item-options side="start">
+          <ion-item-option color="danger" (click)="deletePenalty(pen.id)">
+            <ion-icon color="light" name="trash" slot="icon-only"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>

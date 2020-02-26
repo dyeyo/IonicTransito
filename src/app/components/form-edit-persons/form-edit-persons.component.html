@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" ></ion-back-button> 
+    </ion-buttons>
+    <ion-title>Editar Persona</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <form [formGroup]="form" > 
+        <ion-item>
+          <ion-label position="floating">Nombres</ion-label>
+          <ion-input formControlName="name" name="name"></ion-input>        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Apellidos</ion-label>
+          <ion-input formControlName="last_name" name="last_name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating"># Documento</ion-label>
+          <ion-input formControlName="document" name="document"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Placa de Vehículo</ion-label>
+          <ion-input formControlName="plate_car" name="plate_car"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Modelo del Vehículo</ion-label>
+          <ion-input formControlName="model_car" name="model_car"></ion-input>
+        </ion-item>
+        <br>
+        <ion-button (click)="onUpdate()" expand="full">Actualizar</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

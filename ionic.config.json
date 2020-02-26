@@ -1,5 +1,7 @@
 {
   "name": "transito",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
