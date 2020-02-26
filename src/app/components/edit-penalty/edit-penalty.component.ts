@@ -51,8 +51,8 @@ export class EditPenaltyComponent implements OnInit {
   onUpdate() {
     this.dateService.editPenalty(this.id, this.form.value).subscribe(res => {
       this.penalty=res;
-      this.router.navigate(['/'])
-      this.presentToast('Registro Editado con exito')
+      this.router.navigate(['/tabs/home'])
+      this.presentToast('Multa Editada con exito!')
     })  
   }
 

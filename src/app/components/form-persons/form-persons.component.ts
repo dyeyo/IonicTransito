@@ -48,8 +48,8 @@ export class FormPersonsComponent implements OnInit {
       this.dataService.createPersons(this.form.value).subscribe(res=>{
         this.persons=res;
         this.form.reset();
-        this.route.navigate(['/'])
-        this.presentToast('Registro Creado')
+        this.route.navigate(['/tabs/home'])
+        this.presentToast('Persona Creada con Exito!')
       })
     }else{
       this.presentToast('Verifica los campos')

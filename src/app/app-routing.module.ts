@@ -4,7 +4,6 @@ import { EditPenaltyComponent } from './components/edit-penalty/edit-penalty.com
 import { FormPersonsComponent } from './components/form-persons/form-persons.component';
 import { FormEditPersonsComponent } from './components/form-edit-persons/form-edit-persons.component';
 import { FormPenaltyComponent } from './components/form-penalty/form-penalty.component';
-import { ListPenaltyComponent } from './components/list-penalty/list-penalty.component';
 const routes: Routes = [
   {
     path: '',
@@ -14,6 +13,10 @@ const routes: Routes = [
   {  path:'new_person',component:FormPersonsComponent},
   {  path:'editar_multa/:id',component:EditPenaltyComponent},
   {  path:'editar_person/:id',component:FormEditPersonsComponent},
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+  },
 ];
 @NgModule({
   imports: [

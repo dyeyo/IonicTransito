@@ -44,8 +44,8 @@ export class FormPenaltyComponent implements OnInit {
     if (this.form.valid) {
       this.dataService.createPenalty(this.form.value).subscribe(res=>{
         this.form.reset();
-        this.route.navigate(['/'])
-        this.presentToast('Registro Creado')
+        this.route.navigate(['/tabs/home'])
+        this.presentToast('Multa Registrada con Exito!')
       })
     }else{
       this.presentToast('Verifica los campos')

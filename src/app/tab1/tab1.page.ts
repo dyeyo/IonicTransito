@@ -16,7 +16,7 @@ export class Tab1Page implements OnInit {
     this.getPenalty();  
   }
 
-  ionViewDidEnter(){
+  ionViewWillEnter(){
     console.log('entro');
     this.getPenalty();
   }

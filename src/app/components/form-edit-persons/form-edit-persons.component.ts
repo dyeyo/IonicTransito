@@ -54,8 +54,8 @@ export class FormEditPersonsComponent implements OnInit {
   onUpdate() {
     if (this.form.valid) {
       this.dateService.editPersons(this.id, this.form.value).subscribe(r => {
-      this.router.navigate(['/'])
-      this.presentToast('Registro Editado con exito')
+      this.router.navigate(['/tabs/home'])
+      this.presentToast('Persona Editada con exito!')
       })
     }else{
       this.presentToast('Verifica los campos')
