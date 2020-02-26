@@ -27,7 +27,7 @@ export class FormPenaltyComponent implements OnInit {
     this.form=new FormGroup({
       cause: new FormControl('',Validators.required),
       entry_date: new FormControl('',Validators.required),
-      state: new FormControl('',Validators.required),
+      state: new FormControl(''),
       person_id: new FormControl('',Validators.required),
     });
   }

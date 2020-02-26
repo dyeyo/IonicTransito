@@ -31,8 +31,8 @@
         </ion-item>
         <ion-item>
           <ion-label>Estado Multa</ion-label>
-          <P>ACTIVO-INACTIVO</P>
-          <ion-checkbox slot="end" formControlName="state" name="state"></ion-checkbox>
+          <ion-label>ACTIVO-INACTIVO</ion-label>
+          <ion-checkbox slot="end" formControlName="state" name="state" checked="false" [value]="1"></ion-checkbox>
         </ion-item>
         <br>
         <ion-button (click)="savePenalty()" expand="full">Agregar</ion-button>
